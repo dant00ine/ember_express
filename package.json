@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
+    "express-stormpath": "^2.4.0",
+    "fs": "0.0.2",
     "mongoose": "^4.4.5"
   }
 }
