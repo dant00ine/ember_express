@@ -10,7 +10,9 @@ var port = process.env.PORT || 1337;
 // static files location 
 app.use(express.static(__dirname + '/public'));
 
-require('./app/routes')(app); // configure routes
+// configure routing and mongoose
+require('./app/mongoose');
+require('./app/routes')(app); 
 
 // start server on most elite port
 app.listen(port, function(){

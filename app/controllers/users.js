@@ -2,18 +2,16 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 module.exports = (function(){
-	// return{
-	// 	index: function(req, res){
-			
-	// 	},
-
-	// 	new: function(req, res){
-
-	// 	}, 
-
-	// 	create: function(req, res){
-
-	// 	},
+	return{
+		create: function(req, res){
+			var newUser = new User(req.body);
+			newUser.save(function(err, data) {
+				if(err)
+					console.log("user creation error", err)
+				else
+					res.json(data)
+			})
+		}
 
 	// 	edit: function(req, res){
 
@@ -31,5 +29,5 @@ module.exports = (function(){
 			
 	// 	}
 
-	// }
+	}
 })();
