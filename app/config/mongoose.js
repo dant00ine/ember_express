@@ -1,13 +1,14 @@
 // mongoose.js
-
-// modules
 var mongoose = require('mongoose');
 var fs = require('fs');
+console.log('Mongoose my head cuz I');
+
+var application_route = fs.realpathSync( process.cwd() );
 
 // connect to mongoose database
 mongoose.connect('mongodb://localhost/ember_express');
 
-var models_path = __dirname + '/models';
+var models_path = application_route + '/app/models';
 console.log("Models path:", models_path);
 
 // find appropriate model for 

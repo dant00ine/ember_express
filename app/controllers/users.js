@@ -5,6 +5,7 @@ module.exports = (function(){
 	return{
 		create: function(req, res){
 			var newUser = new User(req.body);
+			console.log('lets see what this user looks like', newUser);
 			newUser.save(function(err, data) {
 				if(err)
 					console.log("user creation error", err)
