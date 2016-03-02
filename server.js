@@ -4,20 +4,21 @@
 var express       = require('express');  
 var app           = express();
 var port 		  = process.env.PORT || 1337;
-var mongoose 	  = require('mongoose');
+
 var passport	  = require('passport');
+var session       = require('express-session');
 var flash 		  = require('connect-flash');
 
 var morgan 		  = require('morgan');
 var cookieParser  = require('cookie-parser');
 var bodyParser    = require('body-parser');
-var session       = require('express-session');
 
+var mongoose 	  = require('mongoose');
 var configDB	  = require('./app/config/database.js');
-
+mongoose.connect(configDB.url);
 // configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// require('./config/passport')(passport); // pass passport for configuration
+require('./app/config/passport/passport')//(passport); // pass passport for configuration
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
